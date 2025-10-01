@@ -1,0 +1,72 @@
+# Doxyfile for BEJ Decoder Library
+
+# ---------------------------------------------------------------------------
+# Project organization and Naming
+# ---------------------------------------------------------------------------
+PROJECT_NAME           = "BEJ Decoder "
+PROJECT_BRIEF          = "Extremely limited BEJ (Binary Encoded JSON) decoder using a dictionary."
+PROJECT_LOGO           =
+OUTPUT_DIRECTORY       = doc/
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+
+# ---------------------------------------------------------------------------
+# Source and Output Configuration
+# ---------------------------------------------------------------------------
+INPUT                  = include \
+                         source \
+                         tests
+FILE_PATTERNS          = *.h \
+                         *.c \
+                         *.cc
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */CMakeLists.txt
+EXAMPLE_PATH           = source
+EXAMPLE_PATTERNS       = main.c
+IMAGE_PATH             =
+
+# ---------------------------------------------------------------------------
+# Documentation Generation Modes
+# ---------------------------------------------------------------------------
+OPTIMIZE_OUTPUT_FOR_C  = YES
+EXTRACT_ALL            = YES      # Document all entities (even undocumented ones)
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES      # Essential for static helper functions (like in decoder.c, dict.c)
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+
+# ---------------------------------------------------------------------------
+# Preprocessor and Code Configuration
+# ---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+PREDEFINED             = JSON_WRITER_STACK_MAX=128
+
+# ---------------------------------------------------------------------------
+# HTML and Layout Configuration
+# ---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_HEADER            =
+HTML_FOOTER            =
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+MYSPELL_CHECK          = NO
+
+# ---------------------------------------------------------------------------
+# Man Page, RTF, XML, and LaTeX Configuration
+# ---------------------------------------------------------------------------
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+GENERATE_LATEX         = NO
+
+# ---------------------------------------------------------------------------
+# Warnings and Messages
+# ---------------------------------------------------------------------------
+QUIET                  = YES
+WARNINGS               = NO
+WARN_IF_UNDOCUMENTED   = NO
+WARN_NO_PARAMDOC       = NO
